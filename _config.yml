@@ -1,4 +1,17 @@
-title: My UT Austin Journey
+title: My MSDS Journey
 author: Ahmed Sabry
-description: Going through my journey at UT Austin as MSDS student
+description: Completing the UT Austin MSDS program
 theme: minima
+
+url: "https://ahmedsabry-ut.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
