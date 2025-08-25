@@ -3,6 +3,14 @@ author: Ahmed Sabry
 description: Completing the UT Austin MSDS program
 theme: minima
 
+# More info
+email: ahmedsabry@utexas.edu
+github_username: ahmedsabry-ut
+repository: ahmedsabry-ut/ahmedsabry-ut.github.io
+timezone: America/Toronto
+linkedin_username: ahmedmsabry
+
+# Default properties
 url: "https://ahmedsabry-ut.github.io"
 baseurl: ""
 markdown: kramdown
