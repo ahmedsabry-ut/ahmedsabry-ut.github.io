@@ -3,7 +3,7 @@ title: "Admission"
 date: 2025-08-24
 ---
 
-I was admitted into the Masters of Data Science program at UT Austin in May 2023. At that point, I had graduated from UBC a year earlier and was working full-time at GE Vernova. Although I enjoyed the transition to professional life, I realized I missed gaining knowledge about topics I am interested in and applying it in different applications.
+I was admitted into the Masters of Data Science program at UT Austin in May 2023. At that point, I had graduated from UBC a year earlier and was working full-time at GE Vernova (General Electric). Although I enjoyed the transition to professional life, I realized I missed gaining knowledge about topics I am interested in and applying it in different applications.
 
 I graduated from UBC in June 2022 and I was so excited to get out into the real world and start solving real-world problems and get away from school. I was pretty good at studying and I graduated with a 4.0 GPA from UBC, but I knew that I could not start a Master's degree right after graduating from my undergraduate degree. I knew I needed a break before pursuing further education.
 
@@ -15,9 +15,9 @@ I was already exploring online masters programs in Canada and the US by January 
 2. **Online/Remote** - I had been jumping between Canada and the UAE very frequently, so I couldn't be tied down to a physical location to complete this degree.
 3. **Asynchronous** - I wanted to continue working full time while studying - I valued the real-world experience that I was gaining and wanted to balance both work and school.
 
-Canadian universities didn't offer anything that was accomodating enough for my arrangement - they were all too expensive for an international student to self fund and mainly required in-person attendance. A couple of US universities had some programs that fit my requirements, but the one that stood out was the MSDS program at UT Austin.
+Canadian universities didn't offer anything that was accommodating enough for my arrangement - they were all too expensive for an international student to self fund and mainly required in-person attendance. A couple of US universities had some programs that fit my requirements, but the one that stood out was the MSDS program at UT Austin.
 
-The application process wasn't too complicated and the fact that I had graduated from UBC with a Bachelor's in Electrical Engineering and a Minor in Computer Science helped ensure I satisified the main math and programming requirements. I got references from my job and professors I worked with to fulfill that requirement too.
+The application process wasn't too complicated and the fact that I had graduated from UBC with a Bachelor's in Electrical Engineering and a Minor in Computer Science helped ensure I satisfied the main math and programming requirements. I got references from my manager and the professors I worked with to fulfill that requirement too.
 
 Soon enough, I got the admission email out of nowhere and was due to start in September 2023. This was also around the time that I was moving from Kelowna to Vancouver, so it really signified a new chapter of my life.
 
