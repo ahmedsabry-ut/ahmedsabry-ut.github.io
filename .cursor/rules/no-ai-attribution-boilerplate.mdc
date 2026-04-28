@@ -1,0 +1,9 @@
+---
+description: Prevent boilerplate AI attribution text in commits or PRs
+alwaysApply: true
+---
+
+# No boilerplate AI attribution text
+
+- Do not add boilerplate AI attribution phrases in commit messages, pull request titles, pull request bodies, or repository files unless explicitly requested by the user.
+- Keep commit and PR descriptions focused on the actual technical changes and rationale.
