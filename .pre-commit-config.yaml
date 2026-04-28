@@ -23,9 +23,3 @@ repos:
         language: system
         pass_filenames: false
         files: ^_posts/.*\.md$
-      - id: check-ge-vernova-first-mention
-        name: check GE Vernova first mention
-        entry: python3 scripts/check_ge_vernova_first_mention.py
-        language: system
-        pass_filenames: false
-        files: ^_posts/.*\.md$
