@@ -14,6 +14,8 @@ linkedin_username: ahmedmsabry
 url: "https://ahmedsabry-ut.github.io"
 baseurl: ""
 markdown: kramdown
+kramdown:
+  input: GFM
 permalink: pretty
 plugins:
   - jekyll-feed
