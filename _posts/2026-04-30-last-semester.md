@@ -1,8 +1,13 @@
 ---
-title: "Last Semester"
-date: 2026-04-28
-enforce_structure: true
+title: "Last But Not Least"
+date: 2026-04-30
+semester_post: true
+semester: 8
+semester_start: 2026-01-01
+semester_end: 2026-04-30
 ---
+
+{% include semester-period.html %}
 
 I'm writing this blog post shortly after I completed my last assignment in my last ever course DSC 385: Principles of Data Science. Its funny how I'm taking a "principles" class at the end of my degree after I completed all the hard courses. To be honest, if it were up to me, I wouldn't have taken this class, I would've taken either the Optimization class or the Advances in Deep Learning class, I only took it because it was a graduation requirement.
 
@@ -20,10 +25,8 @@ Propensity scores/matching were also something that I hadn't learned of before t
 - DSC 385: Principles of Data Science — TidyModels/workflows, communication and modeling, propensity scores and matching (Dr. Roger Peng)
 - Wrapping up the degree after a long stretch juggling school, work, and life
 
-## Certificates
-
-![Certificate Name](/assets/images/certificates/example-certificate.png)
-
 ## Transcript
+
+- **DSC 395T — Principles of Data Science:** The verified learning credential can be found [here](https://cns.badges.utexas.edu/ee2e274b-ffd2-4dbd-9362-86a7347fb7ed).
 
 ![Semester Grade Report](/assets/images/reports/example-report.png)
