@@ -1,8 +1,16 @@
 ---
 title: "Semester Title"
 date: YYYY-MM-DD
-enforce_structure: true
+semester_post: true
+semester: 0
+semester_start: YYYY-MM-DD
+semester_end: YYYY-MM-DD
 ---
+
+{% include semester-period.html %}
+
+Set `semester`, `title`, `semester_start`, and `semester_end` from the semester schedule in the promote skill.
+Set `date` to `semester_end` and use the same date in the filename: `_posts/YYYY-MM-DD-<slug>.md`.
 
 ## Context
 
@@ -13,10 +21,8 @@ Write the semester story here.
 - Course or milestone #1
 - Course or milestone #2
 
-## Certificates
-
-![Certificate Name](/assets/images/certificates/example-certificate.png)
-
 ## Transcript
+
+- **Course code — Course name:** The verified learning credential can be found [here](https://credentials.edx.org/credentials/CREDENTIAL_ID).
 
 ![Semester Grade Report](/assets/images/reports/example-report.png)

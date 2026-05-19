@@ -41,18 +41,3 @@ pre-commit run --all-files
 ## CI
 
 GitHub Actions runs `pre-commit run --all-files` on every `push` and `pull_request`.
-
-## Post structure guardrail
-
-If you want a post to enforce your standard format, add this to front matter:
-
-```yaml
-enforce_structure: true
-```
-
-When enabled, pre-commit checks that the post includes these headings:
-
-- `##/### Certificates`
-- `##/### Transcript`
-
-Use `_templates/semester-post-template.md` as a starting point for new semester posts.

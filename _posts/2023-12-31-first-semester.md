@@ -1,8 +1,13 @@
 ---
 title: "First Semester"
-date: 2025-08-25
-enforce_structure: true
+date: 2023-12-31
+semester_post: true
+semester: 1
+semester_start: 2023-09-01
+semester_end: 2023-12-31
 ---
+
+{% include semester-period.html %}
 
 It's September 2023 and I just moved to Burnaby from Kelowna - a fresh new start. The summer was very hectic and I was just getting my bearings after packing up the old apartment, moving into a new apartment, and helping family. I now had to balance the 2 courses that I registered for with full time work.
 
@@ -39,13 +44,11 @@ The Data Structures and Algorithms course started off on a very good note where 
 
 Looking back at my experience, I probably should've only taken 1 class to really get back into the flow, but I don't think I could have justified it to my younger self. I was after all, excited to finishing this program as soon as possible, and in my eyes, the less courses you take per semester, then more time it'll take to finish the program.
 
-Here are the certificates and grades that I received after completing this semester:
+Here are the grades and verified learning credentials from this semester:
 
-### Certificates
+## Transcript
 
-![Probability and Simulation Based Inference Certificate](/assets/images/certificates/probability-and-inference.png)
-![Data Structures and Algorithms Certificate](/assets/images/certificates/dsa.png)
+- **DSC 381 — Probability and Simulation Based Inference:** The verified learning credential can be found [here](https://courses.edx.org/certificates/865b4c7baf0442c680274528ddc05fd8).
+- **DSC 395T — Data Structures and Algorithms:** The verified learning credential can be found [here](https://courses.edx.org/certificates/2c4b27c443264ef4b0e7fd0d2b3ce11a).
 
-### Transcript
-
-![Fall 2023 Grade Report](/assets/images/reports/fall2023.png)
+![Fall 2023 Grade Report](/assets/images/reports/fall-2023.png)
