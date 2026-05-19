@@ -1,0 +1,24 @@
+{% if page.tags and page.tags.size > 0 %}
+{% assign related_count = 0 %}
+{% assign related_limit = 3 %}
+<section class="related-posts">
+  <h2>Related posts</h2>
+  <ul>
+    {% for post in site.posts %}
+      {% unless post.url == page.url %}
+        {% assign shared = false %}
+        {% for tag in page.tags %}
+          {% if post.tags contains tag %}
+            {% assign shared = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if shared and related_count < related_limit %}
+          {% assign related_count = related_count | plus: 1 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

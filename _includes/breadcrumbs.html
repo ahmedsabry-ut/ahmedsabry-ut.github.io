@@ -1,0 +1,12 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  {% if page.semester_post %}
+  <span aria-hidden="true"> / </span>
+  <a href="{{ '/semesters/' | relative_url }}">Journey</a>
+  <span aria-hidden="true"> / </span>
+  <span>Semester {{ page.semester }}</span>
+  {% elsif page.title %}
+  <span aria-hidden="true"> / </span>
+  <span>{{ page.title | escape }}</span>
+  {% endif %}
+</nav>

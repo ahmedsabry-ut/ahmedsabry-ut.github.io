@@ -6,6 +6,8 @@ semester_post: true
 semester: 8
 semester_start: 2026-01-01
 semester_end: 2026-04-30
+description: Final spring 2026 semester and wrapping up the MSDS degree.
+tags: [msds, semester-recap]
 ---
 
 I'm writing this blog post shortly after I completed my last assignment in my last ever course DSC 385: Principles of Data Science. Its funny how I'm taking a "principles" class at the end of my degree after I completed all the hard courses. To be honest, if it were up to me, I wouldn't have taken this class, I would've taken either the Optimization class or the Advances in Deep Learning class, I only took it because it was a graduation requirement.

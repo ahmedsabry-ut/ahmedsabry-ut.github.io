@@ -50,7 +50,8 @@ Semester schedule (see `README.md`):
 6. **Apply edits**
    - Update front matter: `layout: semester`, `title`, `date`, `semester_post`, `semester`, `semester_start`, `semester_end`.
    - Do **not** add `{% include semester-period.html %}` to the body; the semester layout renders term dates and navigation.
-   - Add `image: /assets/images/reports/<term>.png` when the grade report PNG exists (for `jekyll-seo-tag` social previews).
+   - Add `image: /assets/images/reports/<term>.png` when the grade report image exists (for `jekyll-seo-tag` social previews).
+   - Add `description:` (one line) and `tags: [msds, semester-recap]`.
    - Expect `## Transcript` with a markdown list (one `- ` item per course). Each item must include: `The verified learning credential can be found [here](https://...)` with a real URL (not a placeholder), plus the grade report image.
    - **Rename** the file from the draft name to `_posts/YYYY-MM-DD-<slug>.md` (move/rename in the filesystem or editor; do not leave two copies unless the user asks).
 

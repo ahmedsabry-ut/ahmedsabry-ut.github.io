@@ -7,6 +7,8 @@ semester: 1
 semester_start: 2023-09-01
 semester_end: 2023-12-31
 image: /assets/images/reports/fall-2023.png
+description: Fall 2023 recap — DSA and probability while balancing full-time work.
+tags: [msds, semester-recap]
 ---
 
 It's September 2023 and I just moved to Burnaby from Kelowna - a fresh new start. The summer was very hectic and I was just getting my bearings after packing up the old apartment, moving into a new apartment, and helping family. I now had to balance the 2 courses that I registered for with full time work.

@@ -6,6 +6,8 @@ semester_post: true
 semester: 0
 semester_start: YYYY-MM-DD
 semester_end: YYYY-MM-DD
+description: Short summary for search and social previews.
+tags: [msds, semester-recap]
 ---
 
 Set `semester`, `title`, `semester_start`, and `semester_end` from the semester schedule in the promote skill.

@@ -6,7 +6,7 @@ This blog serves as a journal for my journey as a Master's of Data Science stude
 
 I started this way after I completed a big portion of my degree, but I wanted to document my efforts, results, and resources for others to use as reference.
 
-Read the [semester journey](/semesters/) for term-by-term posts.
+Read the [semester journey](/semesters/) for term-by-term posts, or browse by [tag](/tags/).
 
 ## My Course Schedule
 

@@ -8,6 +8,8 @@ UT Austin Blog
 - **Course schedule** — driven by [`_data/courses.yml`](_data/courses.yml); edit that file to update the table on the home page.
 - **SEO** — `jekyll-seo-tag`, `jekyll-sitemap`, and optional per-post `image:` for social previews (grade report images).
 - **Future posts** — `future: true` in `_config.yml` so dated drafts in `_posts/` build before their publish date.
+- **Navigation** — breadcrumbs, reading time, optional TOC (`toc: true`), tags, related posts, and a [tags index](/tags/).
+- **Plugins** — `jekyll-redirect-from`, `jekyll-include-cache`, `jekyll-relative-links`, `jekyll-gist`, `jekyll-avatar` (see `_config.yml`).
 
 ### Local preview (optional)
 
