@@ -109,6 +109,10 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
     if front_matter_value(front_matter, "title") is None:
         errors.append("missing 'title'")
 
+    layout = front_matter_value(front_matter, "layout")
+    if layout != "semester":
+        errors.append("missing or invalid 'layout' (expected 'semester')")
+
     semester_raw = front_matter_value(front_matter, "semester")
     if semester_raw is None:
         errors.append("missing 'semester' (expected 1-8)")

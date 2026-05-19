@@ -1,0 +1,100 @@
+---
+---
+
+@import "minima";
+
+.post-semester-meta {
+  margin-bottom: 1rem;
+}
+
+.semester-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.semester-nav-next {
+  margin-left: auto;
+}
+
+.semester-card {
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+
+.semester-card .badge {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.semester-card-thumb {
+  display: block;
+  margin: 0.5rem 0;
+  border: 1px solid #e8e8e8;
+}
+
+.journey-list {
+  padding-left: 0;
+}
+
+.post-list .post-item.semester-card {
+  margin-bottom: 2rem;
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs a {
+  color: #2a7ae2;
+}
+
+.reading-time {
+  color: #666;
+}
+
+.post-toc {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-left: 3px solid #e8e8e8;
+}
+
+.post-toc-title {
+  margin: 0 0 0.5rem;
+}
+
+.post-toc ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.related-posts {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.related-posts h2 {
+  font-size: 1.25rem;
+}
+
+.tag-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.tag-list > li {
+  margin-bottom: 2rem;
+}
+
+.page-not-found {
+  text-align: center;
+}

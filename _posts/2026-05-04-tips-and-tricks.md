@@ -1,6 +1,9 @@
 ---
 title: "Tips and Tricks"
 date: 2026-05-04
+description: Practical advice for MSDS students juggling work, school, and life.
+tags: [msds, tips]
+toc: true
 ---
 
 Now that the degree is behind me, I wanted to take a step back and write down the tips and tricks that helped me streamline my work and get through the program while juggling full-time work and life. Some of these I figured out early on, others took a few semesters of trial and error. Hopefully a future student finds something here useful.

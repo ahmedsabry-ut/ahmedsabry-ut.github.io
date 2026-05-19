@@ -1,0 +1,25 @@
+{% if page.semester_post %}
+{% assign semester_posts = site.posts | where_exp: "item", "item.semester_post" | sort: "semester" %}
+{% assign prev_semester = page.semester | minus: 1 %}
+{% assign next_semester = page.semester | plus: 1 %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% for item in semester_posts %}
+  {% if item.semester == prev_semester %}
+    {% assign prev_post = item %}
+  {% endif %}
+  {% if item.semester == next_semester %}
+    {% assign next_post = item %}
+  {% endif %}
+{% endfor %}
+{% if prev_post or next_post %}
+<nav class="semester-nav" aria-label="Semester navigation">
+  {% if prev_post %}
+  <a class="semester-nav-prev" href="{{ prev_post.url | relative_url }}">&larr; Semester {{ prev_post.semester }}: {{ prev_post.title }}</a>
+  {% endif %}
+  {% if next_post %}
+  <a class="semester-nav-next" href="{{ next_post.url | relative_url }}">Semester {{ next_post.semester }}: {{ next_post.title }} &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}
+{% endif %}

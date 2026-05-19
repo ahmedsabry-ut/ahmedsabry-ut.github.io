@@ -16,10 +16,28 @@ baseurl: ""
 markdown: kramdown
 kramdown:
   input: GFM
+  auto_ids: true
 permalink: pretty
+future: true
+show_excerpts: true
+excerpt_separator: "<!--more-->"
+header_pages:
+  - semesters.md
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-relative-links
+  - jekyll-gist
+  - jekyll-avatar
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 exclude:
   - Gemfile
   - Gemfile.lock

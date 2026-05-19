@@ -1,6 +1,8 @@
 ---
 title: "Admission"
 date: 2023-05-23
+description: How I decided to apply to the UT Austin MSDS program while working full time.
+tags: [msds, admission]
 ---
 
 I was admitted into the Masters of Data Science program at UT Austin in May 2023. At that point, I had graduated from UBC a year earlier and was working full-time at GE Vernova (General Electric). Although I enjoyed the transition to professional life, I realized I missed gaining knowledge about topics I am interested in and applying it in different applications.

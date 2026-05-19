@@ -1,0 +1,5 @@
+| Course | Course name | Semester | Grade |
+|--------|-------------|----------|-------|
+{% for course in site.data.courses %}
+| {{ course.code }} | {{ course.name }} | {% if course.taken %}{{ course.semester }}{% else %}—{% endif %} | {% if course.taken %}{{ course.grade }}{% else %}—{% endif %} |
+{% endfor %}
