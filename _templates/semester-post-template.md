@@ -1,16 +1,16 @@
 ---
 title: "Semester Title"
 date: YYYY-MM-DD
+layout: semester
 semester_post: true
 semester: 0
 semester_start: YYYY-MM-DD
 semester_end: YYYY-MM-DD
 ---
 
-{% include semester-period.html %}
-
 Set `semester`, `title`, `semester_start`, and `semester_end` from the semester schedule in the promote skill.
 Set `date` to `semester_end` and use the same date in the filename: `_posts/YYYY-MM-DD-<slug>.md`.
+Add `image: /assets/images/reports/<term>.png` when the grade report image is ready.
 
 ## Context
 

@@ -2,12 +2,6 @@
 <p class="post-semester-meta">
   <strong>Semester {{ page.semester }}</strong>
   ·
-  {% assign start_month = page.semester_start | date: "%-m" %}
-  {% if start_month == "9" %}Sept{% else %}{{ page.semester_start | date: "%b" }}{% endif %}
-  {{ page.semester_start | date: "%Y" }}
-  –
-  {% assign end_month = page.semester_end | date: "%-m" %}
-  {% if end_month == "9" %}Sept{% else %}{{ page.semester_end | date: "%b" }}{% endif %}
-  {{ page.semester_end | date: "%Y" }}
+  {% include semester-dates.html %}
 </p>
 {% endif %}

@@ -1,13 +1,13 @@
 ---
 title: "Bounce Back"
 date: 2024-04-30
+layout: semester
 semester_post: true
 semester: 2
 semester_start: 2024-01-01
 semester_end: 2024-04-30
+image: /assets/images/reports/spring-2024.png
 ---
-
-{% include semester-period.html %}
 
 After being humbled by the first semester, I realized I needed to ease off a bit with the courses. I had taken Data Structures and Algorithms and Probability and Simulation Based Inference because I had a background in these from my undergrad, but the Master's workload has been kinda brutal. So I studied the courses on [the Hub](https://msdshub.com/), which is an excellent resource during course planning, to try to figure out what the most amount of time I'm willing to spend outside of work. I tend to hit the `Scale of 1-10` button because it feels a bit more natural to me to gauge difficulty using that compared to `Scale of 1-5` or `Scale of 1-7`, sort on Workload, and eventually using that + the Program of Work, I decided on my next 2 oppressors, Foundations of Regression and Predictive Modelling  and Data Exploration and Visualization.
 

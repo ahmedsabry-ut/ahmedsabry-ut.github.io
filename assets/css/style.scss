@@ -1,0 +1,47 @@
+---
+---
+
+@import "minima";
+
+.post-semester-meta {
+  margin-bottom: 1rem;
+}
+
+.semester-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.semester-nav-next {
+  margin-left: auto;
+}
+
+.semester-card {
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+
+.semester-card .badge {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.semester-card-thumb {
+  display: block;
+  margin: 0.5rem 0;
+  border: 1px solid #e8e8e8;
+}
+
+.journey-list {
+  padding-left: 0;
+}
+
+.post-list .post-item.semester-card {
+  margin-bottom: 2rem;
+}

@@ -16,10 +16,20 @@ baseurl: ""
 markdown: kramdown
 kramdown:
   input: GFM
+  auto_ids: true
 permalink: pretty
+future: true
+show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 exclude:
   - Gemfile
   - Gemfile.lock

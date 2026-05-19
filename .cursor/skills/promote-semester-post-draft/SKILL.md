@@ -29,6 +29,7 @@ Semester schedule (see `README.md`):
 1. **Read the draft** (path from the user, or default `_posts/semester-post-template.md`). Parse YAML front matter and body.
 
 2. **Set semester metadata** — pick the row from the schedule that matches the draft’s academic term:
+   - `layout: semester`
    - `semester_post: true`
    - `semester`, `title`, `semester_start`, and `semester_end` must match the schedule row for that semester.
    - `date:` must equal `semester_end` (last day of the term’s final month).
@@ -47,8 +48,9 @@ Semester schedule (see `README.md`):
    - Avoid generic slugs like `semester-post` when the content implies something more specific.
 
 6. **Apply edits**
-   - Update front matter: `title`, `date`, `semester_post`, `semester`, `semester_start`, `semester_end`.
-   - Keep `{% include semester-period.html %}` at the top of the body (after front matter).
+   - Update front matter: `layout: semester`, `title`, `date`, `semester_post`, `semester`, `semester_start`, `semester_end`.
+   - Do **not** add `{% include semester-period.html %}` to the body; the semester layout renders term dates and navigation.
+   - Add `image: /assets/images/reports/<term>.png` when the grade report PNG exists (for `jekyll-seo-tag` social previews).
    - Expect `## Transcript` with a markdown list (one `- ` item per course). Each item must include: `The verified learning credential can be found [here](https://...)` with a real URL (not a placeholder), plus the grade report image.
    - **Rename** the file from the draft name to `_posts/YYYY-MM-DD-<slug>.md` (move/rename in the filesystem or editor; do not leave two copies unless the user asks).
 
@@ -95,7 +97,7 @@ Run this **only** after the preview (step 8) has been approved—post file final
 
 - [ ] `semester`, `title`, `semester_start`, and `semester_end` match the semester schedule for this post.
 - [ ] `## Transcript` includes the verified learning credential link line with a real URL.
-- [ ] `semester_post: true` and `{% include semester-period.html %}` present.
+- [ ] `layout: semester` and `semester_post: true` in front matter (no `semester-period` include in body).
 - [ ] `date` equals `semester_end` and matches the filename date prefix.
 - [ ] File lives at `_posts/YYYY-MM-DD-<slug>.md` with matching slug.
 - [ ] Pre-commit run via `.venv` and passing.
