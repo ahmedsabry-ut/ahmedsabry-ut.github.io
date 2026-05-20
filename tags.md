@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: By Tag
 permalink: /tags/
 ---
 
@@ -12,13 +12,17 @@ Posts grouped by topic.
   {% if tag %}
   <li id="tag-{{ tag | slugify }}">
     <h2>{{ tag }}</h2>
-    <ul>
-      {% for post in site.posts %}
+    {% assign posts_by_date = site.posts | sort: 'date' %}
+    <div class="post-list-sortable" data-sort-default="asc" data-sort-default-key="date" data-sort-storage-key="/tags/{{ tag | slugify }}">
+      {% include post-list-sort-controls.html %}
+      <ul class="post-list tag-post-list">
+      {% for post in posts_by_date %}
         {% if post.tags contains tag %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+        {% include post-list-item.html post=post %}
         {% endif %}
       {% endfor %}
-    </ul>
+      </ul>
+    </div>
   </li>
   {% endif %}
 {% endfor %}

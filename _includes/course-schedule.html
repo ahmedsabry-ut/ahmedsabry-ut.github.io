@@ -1,5 +1,20 @@
-| Course | Course name | Semester | Grade |
-|--------|-------------|----------|-------|
-{% for course in site.data.courses %}
-| {{ course.code }} | {{ course.name }} | {% if course.taken %}{{ course.semester }}{% else %}—{% endif %} | {% if course.taken %}{{ course.grade }}{% else %}—{% endif %} |
-{% endfor %}
+<table class="course-schedule">
+  <thead>
+    <tr>
+      <th scope="col">Course</th>
+      <th scope="col">Course name</th>
+      <th scope="col">Semester</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in site.data.courses %}
+    <tr>
+      <td>{{ course.code }}</td>
+      <td>{{ course.name }}</td>
+      <td>{% if course.taken %}{{ course.semester }}{% else %}—{% endif %}</td>
+      <td>{% if course.taken %}{{ course.grade }}{% else %}—{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
