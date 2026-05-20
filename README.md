@@ -4,7 +4,8 @@ UT Austin Blog
 
 ## Site features
 
-- **[Journey](/semesters/)** — semester-by-semester archive with prev/next navigation on each recap post.
+- **[By Semester](/semesters/)** — semester recap index with prev/next navigation on each post.
+- **[By Tag](/tags/)** — posts grouped by topic with optional date sort on each tag section.
 - **Course schedule** — driven by [`_data/courses.yml`](_data/courses.yml); edit that file to update the table on the home page.
 - **SEO** — `jekyll-seo-tag`, `jekyll-sitemap`, and optional per-post `image:` for social previews (grade report images).
 - **Future posts** — `future: true` in `_config.yml` so dated drafts in `_posts/` build before their publish date.

@@ -1,12 +1,13 @@
 ---
 title: My Experience as a UT Austin MSDS Student
+layout: home
 ---
 
 This blog serves as a journal for my journey as a Master's of Data Science student at the University of Texas at Austin.
 
 I started this way after I completed a big portion of my degree, but I wanted to document my efforts, results, and resources for others to use as reference.
 
-Read the [semester journey](/semesters/) for term-by-term posts, or browse by [tag](/tags/).
+Browse [by semester](/semesters/) or [by tag](/tags/).
 
 ## My Course Schedule
 

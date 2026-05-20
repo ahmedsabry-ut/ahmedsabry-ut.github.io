@@ -1,0 +1,9 @@
+<div class="post-list-sort-controls" role="group" aria-label="Sort posts">
+  {%- if include.mode == 'semester' -%}
+  <button type="button" data-sort-key="semester" data-sort-order="asc" class="is-active" aria-pressed="true">By semester</button>
+  <button type="button" data-sort-key="date" data-sort-order="asc" aria-pressed="false">By date</button>
+  {%- else -%}
+  <button type="button" data-sort-key="date" data-sort-order="asc" class="is-active" aria-pressed="true">Oldest first</button>
+  <button type="button" data-sort-key="date" data-sort-order="desc" aria-pressed="false">Newest first</button>
+  {%- endif -%}
+</div>

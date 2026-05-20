@@ -23,6 +23,7 @@ show_excerpts: true
 excerpt_separator: "<!--more-->"
 header_pages:
   - semesters.md
+  - tags.md
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
