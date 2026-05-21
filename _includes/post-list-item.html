@@ -1,8 +1,6 @@
 {%- assign post = include.post -%}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-<li class="post-item{% if post.semester_post %} semester-card{% endif %}"
-    data-date="{{ post.date | date: '%Y%m%d' }}"
-    {% if post.semester %}data-semester="{{ post.semester }}"{% endif %}>
+<li class="post-item{% if post.semester_post %} semester-card{% endif %}">
   {%- if post.semester_post -%}
   <p class="badge">Semester {{ post.semester }} · {% include semester-dates.html post=post %}</p>
   {%- if post.image -%}
