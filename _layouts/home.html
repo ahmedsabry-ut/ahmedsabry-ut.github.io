@@ -10,14 +10,11 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <div class="post-list-sortable" data-sort-default="asc" data-sort-default-key="date" data-sort-storage-key="/">
-      {% include post-list-sort-controls.html %}
-      <ul class="post-list">
-        {%- assign posts_sorted = site.posts | sort: 'date' -%}
-        {%- for post in posts_sorted -%}
-          {% include post-list-item.html post=post %}
-        {%- endfor -%}
-      </ul>
-    </div>
+    <ul class="post-list">
+      {%- assign posts_sorted = site.posts | sort: 'date' | reverse -%}
+      {%- for post in posts_sorted -%}
+        {% include post-list-item.html post=post %}
+      {%- endfor -%}
+    </ul>
   {%- endif -%}
 </div>

@@ -30,4 +30,4 @@ Propensity scores/matching were also something that I hadn't learned of before t
 
 - **DSC 395T — Principles of Data Science:** The verified learning credential can be found [here](https://cns.badges.utexas.edu/ee2e274b-ffd2-4dbd-9362-86a7347fb7ed).
 
-![Semester Grade Report](/assets/images/reports/example-report.png)
+![Spring 2026 Grade Report](/assets/images/reports/spring-2026.png)

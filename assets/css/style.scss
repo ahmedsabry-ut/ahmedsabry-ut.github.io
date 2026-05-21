@@ -109,32 +109,6 @@
   color: #666;
 }
 
-.post-list-sort-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.post-list-sort-controls button {
-  font-size: 0.85rem;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid #e8e8e8;
-  background: #fff;
-  color: inherit;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.post-list-sort-controls button.is-active {
-  border-color: #2a7ae2;
-  color: #2a7ae2;
-}
-
-.post-list-sort-controls button:hover {
-  border-color: #2a7ae2;
-}
-
 .tag-post-list .post-item {
   list-style: none;
   margin-bottom: 1.25rem;

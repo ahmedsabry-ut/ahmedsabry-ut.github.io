@@ -12,17 +12,14 @@ Posts grouped by topic.
   {% if tag %}
   <li id="tag-{{ tag | slugify }}">
     <h2>{{ tag }}</h2>
-    {% assign posts_by_date = site.posts | sort: 'date' %}
-    <div class="post-list-sortable" data-sort-default="asc" data-sort-default-key="date" data-sort-storage-key="/tags/{{ tag | slugify }}">
-      {% include post-list-sort-controls.html %}
-      <ul class="post-list tag-post-list">
-      {% for post in posts_by_date %}
-        {% if post.tags contains tag %}
-        {% include post-list-item.html post=post %}
-        {% endif %}
-      {% endfor %}
-      </ul>
-    </div>
+    {% assign posts_by_date = site.posts | sort: 'date' | reverse %}
+    <ul class="post-list tag-post-list">
+    {% for post in posts_by_date %}
+      {% if post.tags contains tag %}
+      {% include post-list-item.html post=post %}
+      {% endif %}
+    {% endfor %}
+    </ul>
   </li>
   {% endif %}
 {% endfor %}
