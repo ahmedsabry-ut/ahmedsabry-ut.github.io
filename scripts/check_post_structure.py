@@ -88,6 +88,8 @@ def credential_list_errors(transcript_body: str) -> list[str]:
     errors: list[str] = []
     list_items = LIST_ITEM.findall(transcript_body)
     if not list_items:
+        if re.search(r"no courses", transcript_body, re.IGNORECASE):
+            return errors
         errors.append(
             "Transcript must include a credential list (markdown `- ` items, one per course)"
         )

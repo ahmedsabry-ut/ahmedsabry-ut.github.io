@@ -5,3 +5,5 @@ Vernova
 [Gg]it[Hh]ub
 Wilke
 plotnine
+Colab
+TPUs
