@@ -91,7 +91,7 @@ Run this **only** after the preview (step 8) has been approved—post file final
 
 ## Edge cases
 
-- If the body is still mostly placeholders (`## Context` only, or template bullets unchanged), summarize what is missing and ask whether to proceed or wait for more content — still set date/title/slug if the user wants a stub file.
+- If the body is still mostly placeholders (stub narrative only, or transcript list unchanged from the template), summarize what is missing and ask whether to proceed or wait for more content — still set date/title/slug if the user wants a stub file.
 - For semester posts, never use today’s date for `date:` or the filename — always use `semester_end` from the schedule.
 
 ## Quick checklist

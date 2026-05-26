@@ -56,6 +56,10 @@ I'd generally recommend the same approach I took, which is just to gauge how man
 
 Don't do 4+. I'm pretty confident you even need permission to do 3, I never tried it though. Not all courses are created equal, some easier, some harder, but you'll adapt regardless.
 
+### Google Colab
+
+At one point in time, you'll have to train some pretty intense deep learning models with a bunch of data and at that point you'll either have to actually have your own GPU or you could use Google Colab. Colab was good and it has a free offer for students, but the problem was that I couldn't get access to the free service because I live in Canada and Google tried to confirm if I was in Austin. I couldn't get it to work with a VPN either so I kinda just gave up on it altogether and just focused on training with their free TPUs.
+
 ## Study and Note-Taking Workflow
 
 Get an iPad and install the Notability app. Take notes as you watch lectures. Some classes let you take your notes to exams, so you could print them all later and it's eco-friendly. Some professors have their own lecture module PDF files which is also great - I'd recommend taking notes down as they explain instead of just printing completed notes - the learning is in the process, not the final result.

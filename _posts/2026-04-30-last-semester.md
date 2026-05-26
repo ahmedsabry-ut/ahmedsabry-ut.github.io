@@ -21,11 +21,6 @@ Propensity scores/matching were also something that I hadn't learned of before t
 
 <I'll populate more of the contents later when i get the certificate and transcript>
 
-## Highlights
-
-- DSC 385: Principles of Data Science — TidyModels/workflows, communication and modeling, propensity scores and matching (Dr. Roger Peng)
-- Wrapping up the degree after a long stretch juggling school, work, and life
-
 ## Transcript
 
 - **DSC 395T — Principles of Data Science:** The verified learning credential can be found [here](https://cns.badges.utexas.edu/ee2e274b-ffd2-4dbd-9362-86a7347fb7ed).

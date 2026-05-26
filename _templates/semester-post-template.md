@@ -14,14 +14,7 @@ Set `semester`, `title`, `semester_start`, and `semester_end` from the semester 
 Set `date` to `semester_end` and use the same date in the filename: `_posts/YYYY-MM-DD-<slug>.md`.
 Add `image: /assets/images/reports/<term>.png` when the grade report image is ready.
 
-## Context
-
 Write the semester story here.
-
-## Highlights
-
-- Course or milestone #1
-- Course or milestone #2
 
 ## Transcript
 
