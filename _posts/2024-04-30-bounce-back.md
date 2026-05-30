@@ -2,11 +2,14 @@
 title: "Bounce Back"
 date: 2024-04-30
 semester: 2
+meme: /assets/images/memes/bounce-back.gif
 description: Spring 2024 — late nights in Dubai and finding a pace that actually worked.
 tags: [msds, semester-recap]
 ---
 
-After being humbled by the first semester, I realized I needed to ease off a bit with the courses. I had taken Data Structures and Algorithms and Probability and Simulation Based Inference because I had a background in these from my undergrad, but the Master's workload has been kinda brutal. So I studied the courses on [the Hub](https://msdshub.com/), which is an excellent resource during course planning, to try to figure out what the most amount of time I'm willing to spend outside of work. I tend to hit the `Scale of 1-10` button because it feels a bit more natural to me to gauge difficulty using that compared to `Scale of 1-5` or `Scale of 1-7`, sort on Workload, and eventually using that + the Program of Work, I decided on my next 2 oppressors, Foundations of Regression and Predictive Modelling  and Data Exploration and Visualization.
+After being humbled by the first semester, I realized I needed to ease off a bit with the courses. I had taken Data Structures and Algorithms and Probability and Simulation Based Inference because I had a background in these from my undergrad, but the Master's workload has been kinda brutal. So I studied the courses on [the MSDS Hub](https://msdshub.com/), which is an excellent resource during course planning, to try to figure out what the most amount of time I'm willing to spend outside of work. I tend to hit the `Scale of 1-10` button because it feels a bit more natural to me to gauge difficulty using that compared to `Scale of 1-5` or `Scale of 1-7`, sort on Workload, and eventually using that + the Program of Work, I decided on my next 2 oppressors, Foundations of Regression and Predictive Modelling  and Data Exploration and Visualization.
+
+![Bounce back meme](/assets/images/memes/bounce-back.gif)
 
 The interesting thing about this semester is that I decided to do it from back home in Dubai, so my days for the next 4 months were completely flipped. I'd start work at 5ish pm, keep at it till 1/2am, go to the gym, sleep by like 5/6am, and then wake up whenever. Looking back, these days were not sustainable by any stretch and I have no idea how I was able to keep at it for so long. This schedule carried in into the weekends when I would start properly studying. I'd go to a cafe, order a simple tea, and get to watching lectures/completing assignments.
 

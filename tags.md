@@ -8,16 +8,16 @@ Posts grouped by topic.
 <!-- vale off -->
 {% assign all_tags = site.posts | map: "tags" | flatten | uniq | sort %}
 {% for tag in all_tags %}
-  {% if tag %}
-    <h2 id="tag-{{ tag | slugify }}">{{ tag }}</h2>
-    {% assign posts_by_date = site.posts | sort: 'date' | reverse %}
-    <div class="post-list tag-post-list">
-    {% for post in posts_by_date %}
-      {% if post.tags contains tag %}
-        {% include post-list-item.html post=post %}
-      {% endif %}
-    {% endfor %}
-    </div>
-  {% endif %}
+{% if tag %}
+<h2 id="tag-{{ tag | slugify }}">{{ tag }}</h2>
+{% assign posts_by_date = site.posts | sort: 'date' | reverse %}
+<ul class="post-list tag-post-list">
+{% for post in posts_by_date %}
+{% if post.tags contains tag %}
+{% include post-list-item.html post=post %}
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
 {% endfor %}
 <!-- vale on -->
