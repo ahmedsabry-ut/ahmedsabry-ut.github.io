@@ -1,0 +1,12 @@
+{%- assign target = include.post | default: page -%}
+{%- assign preview_image = nil -%}
+{%- if target.meme -%}
+{%- assign preview_image = target.meme -%}
+{%- elsif target.semester_post and target.semester -%}
+{%- assign sem = site.data.semesters | where: "number", target.semester | first -%}
+{%- if sem.report_image -%}
+{%- assign preview_image = sem.report_image -%}
+{%- endif -%}
+{%- elsif target.image -%}
+{%- assign preview_image = target.image -%}
+{%- endif -%}

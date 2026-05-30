@@ -7,3 +7,13 @@ Wilke
 plotnine
 Colab
 TPUs
+MLPs
+CNNs
+Philipp
+Krähenbühl
+hackathon
+Leetcode
+Niekum
+Barto
+Purna
+Sarkar

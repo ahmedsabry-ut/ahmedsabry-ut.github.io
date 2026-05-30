@@ -24,6 +24,21 @@ Semester schedule (see `README.md`):
 | 7 | Sept 2025 – Dec 2025 | Back to the Grind | `2025-09-01` | `2025-12-31` |
 | 8 | Jan 2026 – Apr 2026 | Last But Not Least | `2026-01-01` | `2026-04-30` |
 
+Grade report image (end of `## Transcript`, after credential list). Alt text and filename use the term label from the schedule:
+
+| `semester` | Alt text | Path |
+|------------|----------|------|
+| 1 | Fall 2023 Grade Report | `/assets/images/reports/fall-2023.png` |
+| 2 | Spring 2024 Grade Report | `/assets/images/reports/spring-2024.png` |
+| 3 | — (no courses; omit image) | — |
+| 4 | Fall 2024 Grade Report | `/assets/images/reports/fall-2024.png` |
+| 5 | Spring 2025 Grade Report | `/assets/images/reports/spring-2025.png` |
+| 6 | Summer 2025 Grade Report | `/assets/images/reports/summer-2025.png` |
+| 7 | Fall 2025 Grade Report | `/assets/images/reports/fall-2025.png` |
+| 8 | Spring 2026 Grade Report | `/assets/images/reports/spring-2026.png` |
+
+Markdown form: `![<Season> <Year> Grade Report](/assets/images/reports/<season>-<year>.png)` (e.g. `![Summer 2025 Grade Report](/assets/images/reports/summer-2025.png)`).
+
 ## Steps
 
 1. **Read the draft** (path from the user, or default `_posts/semester-post-template.md`). Parse YAML front matter and body.
@@ -50,9 +65,9 @@ Semester schedule (see `README.md`):
 6. **Apply edits**
    - Update front matter: `layout: semester`, `title`, `date`, `semester_post`, `semester`, `semester_start`, `semester_end`.
    - Do **not** add `{% include semester-period.html %}` to the body; the semester layout renders term dates and navigation.
-   - Add `image: /assets/images/reports/<term>.png` when the grade report image exists (for `jekyll-seo-tag` social previews).
-   - Add `description:` (one line) and `tags: [msds, semester-recap]`.
-   - Expect `## Transcript` with a markdown list (one `- ` item per course). Each item must include: `The verified learning credential can be found [here](https://...)` with a real URL (not a placeholder), plus the grade report image.
+   - Add optional `meme:` when the post includes a meme image (semester card thumbnail and social preview; otherwise the grade report from `_data/semesters.yml` is used).
+   - Add `description:` (one casual line about the semester vibe for search/social previews — no course names or codes) and `tags: [msds, semester-recap]`.
+   - Expect `## Transcript` with `{% include transcript-credentials.html %}`. Credential URLs live in [`_data/courses.yml`](../../_data/courses.yml) (`credential_url` per taken course; omit for unavailable). Term labels and grade report images map from `semester:` via [`_data/semesters.yml`](../../_data/semesters.yml) (`report_image`; `null` for semester 3 break).
    - **Rename** the file from the draft name to `_posts/YYYY-MM-DD-<slug>.md` (move/rename in the filesystem or editor; do not leave two copies unless the user asks).
 
 7. **Validate**
@@ -97,7 +112,8 @@ Run this **only** after the preview (step 8) has been approved—post file final
 ## Quick checklist
 
 - [ ] `semester`, `title`, `semester_start`, and `semester_end` match the semester schedule for this post.
-- [ ] `## Transcript` includes the verified learning credential link line with a real URL.
+- [ ] `description:` is a casual one-liner with no course names or codes.
+- [ ] `## Transcript` includes `{% include transcript-credentials.html %}`; credentials in `_data/courses.yml`, grade report in `_data/semesters.yml` (`report_image`).
 - [ ] `layout: semester` and `semester_post: true` in front matter (no `semester-period` include in body).
 - [ ] `date` equals `semester_end` and matches the filename date prefix.
 - [ ] File lives at `_posts/YYYY-MM-DD-<slug>.md` with matching slug.

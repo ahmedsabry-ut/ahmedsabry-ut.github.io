@@ -6,7 +6,7 @@ semester_post: true
 semester: 8
 semester_start: 2026-01-01
 semester_end: 2026-04-30
-description: Final spring 2026 semester and wrapping up the MSDS degree.
+description: Spring 2026 — the last stretch and wrapping up the degree.
 tags: [msds, semester-recap]
 ---
 
@@ -23,6 +23,4 @@ Propensity scores/matching were also something that I hadn't learned of before t
 
 ## Transcript
 
-- **DSC 395T — Principles of Data Science:** The verified learning credential can be found [here](https://cns.badges.utexas.edu/ee2e274b-ffd2-4dbd-9362-86a7347fb7ed).
-
-![Spring 2026 Grade Report](/assets/images/reports/spring-2026.png)
+{% include transcript-credentials.html %}

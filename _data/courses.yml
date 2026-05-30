@@ -3,36 +3,43 @@
   semester: Fall 2023
   grade: B+
   taken: true
+  credential_url: https://courses.edx.org/certificates/2c4b27c443264ef4b0e7fd0d2b3ce11a
 - code: DSC 381
   name: Probability and Simulation Based Inference
   semester: Fall 2023
   grade: B+
   taken: true
+  credential_url: https://courses.edx.org/certificates/865b4c7baf0442c680274528ddc05fd8
 - code: DSC 382
   name: Foundations of Regression and Predictive Modeling
   semester: Spring 2024
   grade: A
   taken: true
+  credential_url: https://cns.badges.utexas.edu/086ad282-09a3-48c5-8866-728a46f04cf6
 - code: DSC 385
   name: Data Exploration and Visualization
   semester: Spring 2024
   grade: A
   taken: true
+  credential_url: https://courses.edx.org/certificates/2e633d21f04f429492de6bb0eac870a0
 - code: DSC 391L
   name: Principles of Machine Learning
   semester: Fall 2024
   grade: A-
   taken: true
+  credential_url: https://cns.badges.utexas.edu/38049a03-60f6-41dd-95aa-115bd7b22e58#acc.t5qSVJaW
 - code: DSC 394D
   name: Deep Learning
   semester: Spring 2025
   grade: A
   taken: true
+  credential_url: https://cns.badges.utexas.edu/32413269-a99b-45b5-8391-d4806f04dc81
 - code: DSC 395T
   name: Reinforcement Learning
   semester: Summer 2025
   grade: A
   taken: true
+  credential_url: https://cns.badges.utexas.edu/8b9cc99d-6645-432e-9d57-acdf90da1601
 - code: DSC 383
   name: Advanced Predictive Models for Complex Data
   semester: Summer 2025
@@ -43,11 +50,13 @@
   semester: Fall 2025
   grade: A
   taken: true
+  credential_url: https://cns.badges.utexas.edu/e7cd7886-5c82-4557-9a7a-3e226bdb871d
 - code: DSC 395T
   name: Principles of Data Science
   semester: Spring 2026
   grade: A
   taken: true
+  credential_url: https://cns.badges.utexas.edu/ee2e274b-ffd2-4dbd-9362-86a7347fb7ed
 - code: DSC 384
   name: Design Principles and Causal Inference
   semester: null

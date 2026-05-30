@@ -3,8 +3,9 @@
 <li class="post-item{% if post.semester_post %} semester-card{% endif %}">
   {%- if post.semester_post -%}
   <p class="badge">Semester {{ post.semester }} · {% include semester-dates.html post=post %}</p>
-  {%- if post.image -%}
-  <a href="{{ post.url | relative_url }}"><img class="semester-card-thumb" src="{{ post.image | relative_url }}" alt="" width="120" loading="lazy"></a>
+  {%- include post-preview-image.html post=post -%}
+  {%- if preview_image -%}
+  <a href="{{ post.url | relative_url }}"><img class="semester-card-thumb" src="{{ preview_image | relative_url }}" alt="" width="120" loading="lazy"></a>
   {%- endif -%}
   {%- else -%}
   <span class="post-meta">{{ post.date | date: date_format }}</span>

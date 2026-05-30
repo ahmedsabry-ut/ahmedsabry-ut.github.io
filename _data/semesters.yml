@@ -1,0 +1,24 @@
+- number: 1
+  term: Fall 2023
+  report_image: /assets/images/reports/fall-2023.png
+- number: 2
+  term: Spring 2024
+  report_image: /assets/images/reports/spring-2024.png
+- number: 3
+  term: Summer 2024
+  report_image: null
+- number: 4
+  term: Fall 2024
+  report_image: /assets/images/reports/fall-2024.png
+- number: 5
+  term: Spring 2025
+  report_image: /assets/images/reports/spring-2025.png
+- number: 6
+  term: Summer 2025
+  report_image: /assets/images/reports/summer-2025.png
+- number: 7
+  term: Fall 2025
+  report_image: /assets/images/reports/fall-2025.png
+- number: 8
+  term: Spring 2026
+  report_image: /assets/images/reports/spring-2026.png
