@@ -1,6 +1,6 @@
 {% if page.date and page.title %}
 {% include post-preview-image.html post=page %}
-{% if page.semester_post and preview_image %}
+{% if page.semester and preview_image %}
 <meta property="og:image" content="{{ preview_image | absolute_url }}">
 <meta name="twitter:image" content="{{ preview_image | absolute_url }}">
 {% endif %}

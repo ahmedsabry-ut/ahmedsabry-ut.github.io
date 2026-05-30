@@ -1,11 +1,7 @@
 ---
 title: "First Semester"
 date: 2023-12-31
-layout: semester
-semester_post: true
 semester: 1
-semester_start: 2023-09-01
-semester_end: 2023-12-31
 meme: /assets/images/memes/reality-check.png
 description: Fall 2023 — new city, full-time work, and learning the hard way.
 tags: [msds, semester-recap]

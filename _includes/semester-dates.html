@@ -1,8 +1,11 @@
-{% assign sem = include.post | default: page %}
-{% assign start_month = sem.semester_start | date: "%-m" %}
-{% if start_month == "9" %}Sept{% else %}{{ sem.semester_start | date: "%b" }}{% endif %}
-{{ sem.semester_start | date: "%Y" }}
+{% assign post_ref = include.post | default: page %}
+{% assign sem_data = site.data.semesters | where: "number", post_ref.semester | first %}
+{% assign start = sem_data.semester_start %}
+{% assign end = sem_data.semester_end %}
+{% assign start_month = start | date: "%-m" %}
+{% if start_month == "9" %}Sept{% else %}{{ start | date: "%b" }}{% endif %}
+{{ start | date: "%Y" }}
 –
-{% assign end_month = sem.semester_end | date: "%-m" %}
-{% if end_month == "9" %}Sept{% else %}{{ sem.semester_end | date: "%b" }}{% endif %}
-{{ sem.semester_end | date: "%Y" }}
+{% assign end_month = end | date: "%-m" %}
+{% if end_month == "9" %}Sept{% else %}{{ end | date: "%b" }}{% endif %}
+{{ end | date: "%Y" }}

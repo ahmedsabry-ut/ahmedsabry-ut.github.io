@@ -1,11 +1,7 @@
 ---
 title: "Last But Not Least"
 date: 2026-04-30
-layout: semester
-semester_post: true
 semester: 8
-semester_start: 2026-01-01
-semester_end: 2026-04-30
 description: Spring 2026 — the last stretch and wrapping up the degree.
 tags: [msds, semester-recap]
 ---

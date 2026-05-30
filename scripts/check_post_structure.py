@@ -51,7 +51,7 @@ def split_front_matter(content: str) -> tuple[str, str] | None:
 
 
 def is_semester_post(front_matter: str) -> bool:
-    return bool(re.search(r"^semester_post:\s*true\s*$", front_matter, re.MULTILINE))
+    return front_matter_value(front_matter, "semester") is not None
 
 
 def front_matter_value(front_matter: str, key: str) -> str | None:
@@ -264,11 +264,8 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
     if front_matter_value(front_matter, "title") is None:
         errors.append("missing 'title'")
 
-    layout = front_matter_value(front_matter, "layout")
-    if layout != "semester":
-        errors.append("missing or invalid 'layout' (expected 'semester')")
-
     semester_raw = front_matter_value(front_matter, "semester")
+    semester_end: str | None = None
     if semester_raw is None:
         errors.append("missing 'semester' (expected 1-8)")
     else:
@@ -279,16 +276,21 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
         else:
             if not 1 <= semester <= 8:
                 errors.append(f"invalid 'semester' value: {semester} (expected 1-8)")
-
-    semester_end: str | None = None
-    for date_key in ("semester_start", "semester_end"):
-        value = front_matter_value(front_matter, date_key)
-        if value is None:
-            errors.append(f"missing {date_key!r}")
-        elif not ISO_DATE.match(value):
-            errors.append(f"invalid {date_key} {value!r} (expected YYYY-MM-DD)")
-        elif date_key == "semester_end":
-            semester_end = value
+            else:
+                record = semester_record(semester)
+                if record is None:
+                    errors.append(
+                        f"semester {semester} has no matching row in _data/semesters.yml"
+                    )
+                else:
+                    end = record.get("semester_end")
+                    if not isinstance(end, str) or not ISO_DATE.match(end):
+                        errors.append(
+                            f"semester {semester} has invalid semester_end in "
+                            "_data/semesters.yml"
+                        )
+                    else:
+                        semester_end = end
 
     publish_date = front_matter_value(front_matter, "date")
     if publish_date is None:
@@ -298,7 +300,7 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
     elif semester_end is not None and publish_date != semester_end:
         errors.append(
             f"date {publish_date!r} must match semester_end {semester_end!r} "
-            "(use the last day of the term month)"
+            "from _data/semesters.yml (use the last day of the term month)"
         )
 
     return errors, publish_date
@@ -356,7 +358,7 @@ def main() -> int:
             print(f"- {error}")
         print(
             "\nFix front matter, Transcript heading, credential link, and filename date, "
-            "or set 'semester_post: false' in front matter."
+            "or remove 'semester' from front matter."
         )
         return 1
 

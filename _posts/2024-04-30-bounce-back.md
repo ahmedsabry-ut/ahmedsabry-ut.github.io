@@ -1,11 +1,7 @@
 ---
 title: "Bounce Back"
 date: 2024-04-30
-layout: semester
-semester_post: true
 semester: 2
-semester_start: 2024-01-01
-semester_end: 2024-04-30
 description: Spring 2024 — late nights in Dubai and finding a pace that actually worked.
 tags: [msds, semester-recap]
 ---
