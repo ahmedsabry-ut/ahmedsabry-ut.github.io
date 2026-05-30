@@ -6,6 +6,7 @@ semester_post: true
 semester: 1
 semester_start: 2023-09-01
 semester_end: 2023-12-31
+meme: /assets/images/memes/reality-check.png
 description: Fall 2023 — new city, full-time work, and learning the hard way.
 tags: [msds, semester-recap]
 ---
@@ -45,7 +46,7 @@ The Data Structures and Algorithms course started off on a very good note where 
 
 Looking back at my experience, I probably should've only taken 1 class to really get back into the flow, but I don't think I could have justified it to my younger self. I was after all, excited to finishing this program as soon as possible, and in my eyes, the less courses you take per semester, then more time it'll take to finish the program.
 
-Here are the grades and verified learning credentials from this semester:
+![Reality Check Meme](/assets/images/memes/reality-check.png)
 
 ## Transcript
 
