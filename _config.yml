@@ -17,7 +17,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   auto_ids: true
-permalink: pretty
+permalink: /:title/
 future: true
 show_excerpts: true
 excerpt_separator: "<!--more-->"
