@@ -50,10 +50,6 @@ def split_front_matter(content: str) -> tuple[str, str] | None:
     return None
 
 
-def is_semester_post(front_matter: str) -> bool:
-    return front_matter_value(front_matter, "semester") is not None
-
-
 def front_matter_value(front_matter: str, key: str) -> str | None:
     match = re.search(rf"^{re.escape(key)}:\s*(.+?)\s*$", front_matter, re.MULTILINE)
     if not match:
@@ -64,6 +60,22 @@ def front_matter_value(front_matter: str, key: str) -> str | None:
     ):
         return value[1:-1]
     return value
+
+
+def is_semester_post(front_matter: str) -> bool:
+    return front_matter_value(front_matter, "semester") is not None
+
+
+def normalize_iso_date(value) -> str | None:
+    if value is None:
+        return None
+    if isinstance(value, str):
+        return value if ISO_DATE.match(value) else None
+    isoformat = getattr(value, "isoformat", None)
+    if callable(isoformat):
+        result = isoformat()
+        return result if isinstance(result, str) and ISO_DATE.match(result) else None
+    return None
 
 
 def missing_sections(body: str) -> list[str]:
@@ -283,8 +295,8 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
                         f"semester {semester} has no matching row in _data/semesters.yml"
                     )
                 else:
-                    end = record.get("semester_end")
-                    if not isinstance(end, str) or not ISO_DATE.match(end):
+                    end = normalize_iso_date(record.get("semester_end"))
+                    if end is None:
                         errors.append(
                             f"semester {semester} has invalid semester_end in "
                             "_data/semesters.yml"
