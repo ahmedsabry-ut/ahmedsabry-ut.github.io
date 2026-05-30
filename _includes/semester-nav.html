@@ -1,6 +1,6 @@
 {% assign current_semester = include.semester | default: page.semester %}
 {% if current_semester %}
-{% assign semester_posts = site.posts | where_exp: "item", "item.semester_post" | sort: "semester" %}
+{% assign semester_posts = site.posts | where_exp: "item", "item.semester" | sort: "semester" %}
 {% assign prev_semester = current_semester | minus: 1 %}
 {% assign next_semester = current_semester | plus: 1 %}
 {% assign prev_post = nil %}

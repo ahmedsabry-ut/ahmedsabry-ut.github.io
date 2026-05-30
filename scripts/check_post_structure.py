@@ -9,6 +9,7 @@ import sys
 
 
 POSTS_DIR = Path("_posts")
+DATA_DIR = Path("_data")
 REQUIRED_SECTIONS = ("Transcript",)
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 POST_FILENAME_DATE = re.compile(r"^(\d{4}-\d{2}-\d{2})-.+\.md$")
@@ -17,13 +18,21 @@ CREDENTIAL_LINE = re.compile(
     re.IGNORECASE,
 )
 PLACEHOLDER_URL = re.compile(
-    r"insert|example\.com|example-certificate|REPLACE",
+    r"insert|example\.com|example-certificate|REPLACE|PENDING",
     re.IGNORECASE,
 )
-LIST_ITEM = re.compile(r"^\s*-\s+.+", re.MULTILINE)
+CREDENTIAL_UNAVAILABLE = re.compile(
+    r"The verified learning credential is not available\.?",
+    re.IGNORECASE,
+)
+LIST_ITEM = re.compile(r"^[ \t]*-\s+.+", re.MULTILINE)
 TRANSCRIPT_SECTION = re.compile(
     r"^#{2,6}\s+Transcript\s*$([\s\S]*?)(?=^#{2,6}\s+|\Z)",
     re.MULTILINE | re.IGNORECASE,
+)
+TRANSCRIPT_INCLUDE = re.compile(
+    r"\{%\s*include\s+transcript-credentials\.html(?:\s+[^%]+)?\s*%\}",
+    re.IGNORECASE,
 )
 
 
@@ -41,10 +50,6 @@ def split_front_matter(content: str) -> tuple[str, str] | None:
     return None
 
 
-def is_semester_post(front_matter: str) -> bool:
-    return bool(re.search(r"^semester_post:\s*true\s*$", front_matter, re.MULTILINE))
-
-
 def front_matter_value(front_matter: str, key: str) -> str | None:
     match = re.search(rf"^{re.escape(key)}:\s*(.+?)\s*$", front_matter, re.MULTILINE)
     if not match:
@@ -55,6 +60,22 @@ def front_matter_value(front_matter: str, key: str) -> str | None:
     ):
         return value[1:-1]
     return value
+
+
+def is_semester_post(front_matter: str) -> bool:
+    return front_matter_value(front_matter, "semester") is not None
+
+
+def normalize_iso_date(value) -> str | None:
+    if value is None:
+        return None
+    if isinstance(value, str):
+        return value if ISO_DATE.match(value) else None
+    isoformat = getattr(value, "isoformat", None)
+    if callable(isoformat):
+        result = isoformat()
+        return result if isinstance(result, str) and ISO_DATE.match(result) else None
+    return None
 
 
 def missing_sections(body: str) -> list[str]:
@@ -73,7 +94,9 @@ def transcript_section(body: str) -> str | None:
     return match.group(1)
 
 
-def line_has_valid_credential_link(line: str) -> bool:
+def line_has_valid_credential_entry(line: str) -> bool:
+    if CREDENTIAL_UNAVAILABLE.search(line):
+        return True
     for match in CREDENTIAL_LINE.finditer(line):
         url = match.group(1).strip()
         if not url or url == "#":
@@ -82,6 +105,82 @@ def line_has_valid_credential_link(line: str) -> bool:
             continue
         return True
     return False
+
+
+def load_yaml_records(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    try:
+        import yaml
+    except ImportError:
+        return _parse_simple_yaml_records(path.read_text(encoding="utf-8"))
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        return []
+    return [item for item in data if isinstance(item, dict)]
+
+
+def _parse_simple_yaml_records(content: str) -> list[dict]:
+    records: list[dict] = []
+    current: dict | None = None
+    for line in content.splitlines():
+        if line.startswith("- "):
+            if current:
+                records.append(current)
+            current = {}
+            key, _, value = line[2:].partition(":")
+            current[key.strip()] = _parse_simple_yaml_value(value.strip())
+        elif line.startswith("  ") and current is not None:
+            key, _, value = line.strip().partition(":")
+            current[key.strip()] = _parse_simple_yaml_value(value.strip())
+    if current:
+        records.append(current)
+    return records
+
+
+def _parse_simple_yaml_value(raw: str):
+    if raw in ("null", "~", ""):
+        return None
+    if raw == "true":
+        return True
+    if raw == "false":
+        return False
+    if raw.isdigit():
+        return int(raw)
+    if (raw.startswith('"') and raw.endswith('"')) or (
+        raw.startswith("'") and raw.endswith("'")
+    ):
+        return raw[1:-1]
+    return raw
+
+
+def term_for_semester(semester: int) -> str | None:
+    record = semester_record(semester)
+    if record is None:
+        return None
+    term = record.get("term")
+    return term if isinstance(term, str) else None
+
+
+def semester_record(semester: int) -> dict | None:
+    for record in load_yaml_records(DATA_DIR / "semesters.yml"):
+        if record.get("number") == semester:
+            return record
+    return None
+
+
+def courses_for_term(term: str) -> list[dict]:
+    courses: list[dict] = []
+    for course in load_yaml_records(DATA_DIR / "courses.yml"):
+        if course.get("taken") and course.get("semester") == term:
+            courses.append(course)
+    return courses
+
+
+def url_is_valid_credential(url: str) -> bool:
+    if not url or url == "#":
+        return False
+    return not PLACEHOLDER_URL.search(url)
 
 
 def credential_list_errors(transcript_body: str) -> list[str]:
@@ -96,13 +195,79 @@ def credential_list_errors(transcript_body: str) -> list[str]:
         return errors
 
     for index, item in enumerate(list_items, start=1):
-        if not line_has_valid_credential_link(item):
+        if not line_has_valid_credential_entry(item):
             errors.append(
-                f"credential list item {index} must include "
+                f"credential list item {index} must include either "
                 "'The verified learning credential can be found [here](https://...)' "
-                "with a real URL (not a placeholder)"
+                "with a real URL (not a placeholder), or "
+                "'The verified learning credential is not available.'"
             )
     return errors
+
+
+def transcript_include_errors(front_matter: str, transcript_body: str) -> list[str]:
+    errors: list[str] = []
+    if not TRANSCRIPT_INCLUDE.search(transcript_body):
+        errors.append(
+            "Transcript must include "
+            "'{% include transcript-credentials.html %}' "
+            "or a credential list (markdown `- ` items, one per course)"
+        )
+        return errors
+
+    semester_raw = front_matter_value(front_matter, "semester")
+    if semester_raw is None:
+        errors.append("missing 'semester' required for transcript-credentials include")
+        return errors
+
+    try:
+        semester = int(semester_raw)
+    except ValueError:
+        errors.append(f"invalid 'semester' value: {semester_raw!r}")
+        return errors
+
+    term = term_for_semester(semester)
+    if term is None:
+        errors.append(
+            f"semester {semester} has no matching term in _data/semesters.yml"
+        )
+        return errors
+
+    record = semester_record(semester)
+    courses = courses_for_term(term)
+    if not courses:
+        if semester == 3:
+            return errors
+        errors.append(
+            f"no taken courses in _data/courses.yml for term {term!r} "
+            f"(semester {semester})"
+        )
+        return errors
+
+    report_image = record.get("report_image") if record else None
+    if not report_image:
+        errors.append(
+            f"semester {semester} must have report_image in _data/semesters.yml"
+        )
+
+    for index, course in enumerate(courses, start=1):
+        code = course.get("code", "?")
+        name = course.get("name", "?")
+        url = course.get("credential_url")
+        if url is None:
+            continue
+        if not isinstance(url, str) or not url_is_valid_credential(url):
+            errors.append(
+                f"credential for {code} — {name} (item {index}) must be a real URL "
+                "(not a placeholder), or omit credential_url for unavailable"
+            )
+    return errors
+
+
+def validate_transcript_section(front_matter: str, transcript_body: str) -> list[str]:
+    if TRANSCRIPT_INCLUDE.search(transcript_body):
+        return transcript_include_errors(front_matter, transcript_body)
+    return credential_list_errors(transcript_body)
 
 
 def validate_semester_metadata(front_matter: str) -> list[str]:
@@ -111,11 +276,8 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
     if front_matter_value(front_matter, "title") is None:
         errors.append("missing 'title'")
 
-    layout = front_matter_value(front_matter, "layout")
-    if layout != "semester":
-        errors.append("missing or invalid 'layout' (expected 'semester')")
-
     semester_raw = front_matter_value(front_matter, "semester")
+    semester_end: str | None = None
     if semester_raw is None:
         errors.append("missing 'semester' (expected 1-8)")
     else:
@@ -126,16 +288,21 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
         else:
             if not 1 <= semester <= 8:
                 errors.append(f"invalid 'semester' value: {semester} (expected 1-8)")
-
-    semester_end: str | None = None
-    for date_key in ("semester_start", "semester_end"):
-        value = front_matter_value(front_matter, date_key)
-        if value is None:
-            errors.append(f"missing {date_key!r}")
-        elif not ISO_DATE.match(value):
-            errors.append(f"invalid {date_key} {value!r} (expected YYYY-MM-DD)")
-        elif date_key == "semester_end":
-            semester_end = value
+            else:
+                record = semester_record(semester)
+                if record is None:
+                    errors.append(
+                        f"semester {semester} has no matching row in _data/semesters.yml"
+                    )
+                else:
+                    end = normalize_iso_date(record.get("semester_end"))
+                    if end is None:
+                        errors.append(
+                            f"semester {semester} has invalid semester_end in "
+                            "_data/semesters.yml"
+                        )
+                    else:
+                        semester_end = end
 
     publish_date = front_matter_value(front_matter, "date")
     if publish_date is None:
@@ -145,7 +312,7 @@ def validate_semester_metadata(front_matter: str) -> list[str]:
     elif semester_end is not None and publish_date != semester_end:
         errors.append(
             f"date {publish_date!r} must match semester_end {semester_end!r} "
-            "(use the last day of the term month)"
+            "from _data/semesters.yml (use the last day of the term month)"
         )
 
     return errors, publish_date
@@ -194,7 +361,7 @@ def main() -> int:
         if section is None:
             errors.append(f"{post_path}: missing ## Transcript section")
         else:
-            for error in credential_list_errors(section):
+            for error in validate_transcript_section(front_matter, section):
                 errors.append(f"{post_path}: {error}")
 
     if errors:
@@ -203,7 +370,7 @@ def main() -> int:
             print(f"- {error}")
         print(
             "\nFix front matter, Transcript heading, credential link, and filename date, "
-            "or set 'semester_post: false' in front matter."
+            "or remove 'semester' from front matter."
         )
         return 1
 

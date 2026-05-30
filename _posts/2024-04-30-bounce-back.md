@@ -1,13 +1,8 @@
 ---
 title: "Bounce Back"
 date: 2024-04-30
-layout: semester
-semester_post: true
 semester: 2
-semester_start: 2024-01-01
-semester_end: 2024-04-30
-image: /assets/images/reports/spring-2024.png
-description: Spring 2024 recap — regression and visualization from Dubai.
+description: Spring 2024 — late nights in Dubai and finding a pace that actually worked.
 tags: [msds, semester-recap]
 ---
 
@@ -31,7 +26,4 @@ I did get A's on both of these classes, so safe to say, I figured out what my st
 
 ## Transcript
 
-- **DSC 382 — Foundations of Regression and Predictive Modeling:** The verified learning credential can be found [here](https://courses.edx.org/certificates/108ff0462fea4146a7f31503263ddd01).
-- **DSC 385 — Data Exploration and Visualization:** The verified learning credential can be found [here](https://courses.edx.org/certificates/2e633d21f04f429492de6bb0eac870a0).
-
-![Spring 2024 Grade Report](/assets/images/reports/spring-2024.png)
+{% include transcript-credentials.html %}

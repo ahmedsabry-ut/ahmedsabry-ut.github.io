@@ -6,8 +6,8 @@ UT Austin Blog
 
 - **[By Semester](/semesters/)** — semester recap index with prev/next navigation on each post.
 - **[By Tag](/tags/)** — posts grouped by topic with optional date sort on each tag section.
-- **Course schedule** — driven by [`_data/courses.yml`](_data/courses.yml); edit that file to update the table on the home page.
-- **SEO** — `jekyll-seo-tag`, `jekyll-sitemap`, and optional per-post `image:` for social previews (grade report images).
+- **Course schedule** — driven by [`_data/courses.yml`](_data/courses.yml); edit that file to update the table on the home page. Semester post credentials and grade report images are rendered via `{% include transcript-credentials.html %}` from `_data/courses.yml` and `_data/semesters.yml`.
+- **SEO** — `jekyll-seo-tag`, `jekyll-sitemap`, and computed preview images for semester posts (`meme:` in front matter, else grade report from `_data/semesters.yml`).
 - **Future posts** — `future: true` in `_config.yml` so dated drafts in `_posts/` build before their publish date.
 - **Navigation** — breadcrumbs, reading time, optional TOC (`toc: true`), tags, related posts, and a [tags index](/tags/).
 - **Plugins** — `jekyll-redirect-from`, `jekyll-include-cache`, `jekyll-relative-links`, `jekyll-gist`, `jekyll-avatar` (see `_config.yml`).
