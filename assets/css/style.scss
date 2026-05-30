@@ -46,6 +46,18 @@
   margin-bottom: 2rem;
 }
 
+.journey-list .post-item.semester-card {
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.journey-list .post-item.semester-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .breadcrumbs {
   font-size: 0.9rem;
   color: #666;
