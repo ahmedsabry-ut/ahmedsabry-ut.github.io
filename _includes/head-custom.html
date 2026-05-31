@@ -1,8 +1,10 @@
 {% if page.date and page.title %}
 {% include post-preview-image.html post=page %}
-{% if page.semester and preview_image %}
-<meta property="og:image" content="{{ preview_image | absolute_url }}">
-<meta name="twitter:image" content="{{ preview_image | absolute_url }}">
-{% endif %}
+{% assign social_image = preview_image | default: '/assets/images/thumbnail.jpg' %}
+<meta property="og:image" content="{{ social_image | absolute_url }}">
+<meta property="og:image:alt" content="{{ page.title | escape }}">
+<meta name="twitter:image" content="{{ social_image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+{% assign preview_image = social_image %}
 {% include json-ld-article.html %}
 {% endif %}
