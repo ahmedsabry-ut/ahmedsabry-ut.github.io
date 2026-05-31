@@ -39,6 +39,18 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: "index.md"
+    values:
+      image: /assets/images/thumbnail.png
+  - scope:
+      path: "tags.html"
+    values:
+      image: /assets/images/thumbnail.png
+  - scope:
+      path: "semesters.md"
+    values:
+      image: /assets/images/thumbnail.png
 exclude:
   - Gemfile
   - Gemfile.lock
