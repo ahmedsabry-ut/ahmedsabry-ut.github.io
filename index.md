@@ -1,7 +1,7 @@
 ---
 title: My Experience as a UT Austin MSDS Student
 layout: home
-image: /assets/images/thumbnail.jpg
+image: /assets/images/thumbnail.png
 ---
 
 This blog serves as a journal for my journey as a Master's of Data Science student at the University of Texas at Austin.

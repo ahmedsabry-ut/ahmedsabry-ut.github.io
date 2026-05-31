@@ -1,6 +1,6 @@
 {% if page.date and page.title %}
 {% include post-preview-image.html post=page %}
-{% assign social_image = preview_image | default: '/assets/images/thumbnail.jpg' %}
+{% assign social_image = preview_image | default: '/assets/images/thumbnail.png' %}
 <meta property="og:image" content="{{ social_image | absolute_url }}">
 <meta property="og:image:alt" content="{{ page.title | escape }}">
 <meta name="twitter:image" content="{{ social_image | absolute_url }}">
